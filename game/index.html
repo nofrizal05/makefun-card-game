@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lantern Duel — a card duel on the Lantern Isles</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div id="stage">
+  <div id="topbar">
+    <div id="hero-ai"></div>
+    <div id="hand-ai" aria-label="Mira's hand"></div>
+  </div>
+  <div id="board-ai" class="board" aria-label="Mira's creatures"></div>
+  <div id="midbar">
+    <div id="log" aria-live="polite"></div>
+    <div id="mid-right">
+      <div id="turn-label"></div>
+      <div id="hint"></div>
+      <div id="buttons">
+        <button id="end-turn" type="button">End Turn ⏎</button>
+        <button id="new-game" type="button">New Game</button>
+        <button id="mute-btn" type="button">🔊 Sound on</button>
+      </div>
+    </div>
+  </div>
+  <div id="board-player" class="board" aria-label="Your creatures"></div>
+  <div id="bottombar">
+    <div id="hero-player"></div>
+    <div id="hand-player" aria-label="Your hand"></div>
+  </div>
+
+  <div id="title-overlay" class="overlay">
+    <div class="panel">
+      <div class="lantern">✦</div>
+      <h1>Lantern Duel</h1>
+      <p class="tagline">A card duel on the Lantern Isles</p>
+      <p class="rules">You and Mira the Tidecaller each hold <b>30 life</b>. Spend mana to play
+      creatures and spells, strike with your creatures, and take Mira to <b>0 life</b>
+      before she does the same to you. Mana grows by 1 each turn, up to 10.</p>
+      <p class="rules small">Click a glowing card to play it · click one of your creatures, then an
+      enemy creature or Mira, to attack · End Turn (or Enter) passes to Mira.</p>
+      <button id="play-btn" type="button">▶&nbsp; Play</button>
+      <p class="credit">An original game · art, sounds and rules made for this duel</p>
+    </div>
+  </div>
+
+  <div id="end-overlay" class="overlay hidden">
+    <div class="panel">
+      <h1 id="end-title">VICTORY</h1>
+      <p id="end-sub" class="tagline"></p>
+      <p id="end-stats" class="rules"></p>
+      <button id="again-btn" type="button">↻&nbsp; Play Again</button>
+    </div>
+  </div>
+</div>
+<p id="status" role="status" aria-live="polite"></p>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
